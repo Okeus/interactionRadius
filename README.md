@@ -1,7 +1,7 @@
 # interactionRadius
 This is code for simulating the interaction radius from randomly dispersed microdroplets in a liquid medium.  It predicts the interaction radius, this represents 90% volume for the probability density function of increased temperature surrounding a single particle. 
 
-The scripts are to be run on an HPC cluster computer. There are steps taken to implement the script on the cluster.
+The scripts are to be run on an HPC cluster computer. There are steps taken to implement the script on the cluster. Some of the jobs tended to fail, without much description in the job report.  I completed as many jobs as possible, then resubmitted any failed jobs by adjusting the job array indices.  
 
 gaussianOverlap3D_v9c_batch.sh : Bash script for submitting single job from the job array. Allows the the number of cpus and amount of memory for each job to be pre-allocated.  Otherwise, the job will  probably fail due to memory errors.
 
