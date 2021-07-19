@@ -8,16 +8,16 @@ gaussianOverlap3D_v9c_batch.sh : Bash script for submitting single job from the 
 gaussianOverlap3D_v9c_batch.m : Main matlab script.  This simulates the interaction radii matrices. Adjust matrix size with increasing or decreasing 'sfact' variable.  sfact=1 is 256x256x256 matrix.  sfact=4 is 1024x102x1024 matrix, etc. Randomly places spheres in the matrix with a convolution kernel, then summates the matrices.  
 
 %Load Matlab module
- 1. module load matlab
+module load matlab
 
 %Compile Matlab code to execute script without the need for selecting licenses.
- 2. DISPLAY="" mcc -m -v -R '-nodisplay' -o gaussianOverlap3D_v9c_batch gaussianOverlap3D_v9c_batch.m
+DISPLAY="" mcc -m -v -R '-nodisplay' -o gaussianOverlap3D_v9c_batch gaussianOverlap3D_v9c_batch.m
 
 %Submit the batch script to the cluster queue.
- 3. sbatch --array=1-80 gaussianOverlap3D_v9c_batch.sh
+sbatch --array=1-80 gaussianOverlap3D_v9c_batch.sh
 
 %Move output files.
- 4. After all jobs are complete, make folders 'sums' and 'slices'.  Put .mat files in the 'sums' folder. Put .jpg files in the 'slices' folder.
+After all jobs are complete, make folders 'sums' and 'slices'.  Put .mat files in the 'sums' folder. Put .jpg files in the 'slices' folder.
 
 %Plot the output.
- 5. Execute 'gaussianOverlap3D_v9c_batch_plot_fill.m' to plot the simulation results versus the experimental data results.
+Execute 'gaussianOverlap3D_v9c_batch_plot_fill.m' to plot the simulation results versus the experimental data results.
