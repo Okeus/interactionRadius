@@ -3,14 +3,17 @@
 % for u=1:80
 %    gaussianOverlap3D_v9c_batch(u)
 % end
-function gaussianOverlap3D_v9c_batch(arr_idx)
-%function gaussianOverlap3D_v9c_batch()
+
+%function gaussianOverlap3D_v9c_batch(arr_idx)
+function gaussianOverlap3D_v9c_batch()
+    %parpool(4)
+    %opts=parforOptions(parcluster('local'));
 	%gpuDevice
     %istr='sub'
 	%istr='add'
     tic
 	istr='thr'
-    sfact=1;
+    sfact=4;
 	datetime('now')
     xx=sfact*256;
     yy=sfact*256;
@@ -35,8 +38,8 @@ function gaussianOverlap3D_v9c_batch(arr_idx)
         end
     end
     disp(size(idx_mat));
-    %aaa=str2num(getenv('SLURM_ARRAY_TASK_ID'));
-    aaa=arr_idx;
+    aaa=str2num(getenv('SLURM_ARRAY_TASK_ID'));
+    %aaa=arr_idx;
     radi=idx_mat(aaa,1);
     
     cnt=1;
@@ -102,8 +105,11 @@ function gaussianOverlap3D_v9c_batch(arr_idx)
     end
     whos
     %B=gpuArray(B);
-    A=tall(A);
+    %B=distributed(B);
+    %B=tall(B);
     %A=gpuArray(A);
+    %A=distributed(A);
+    %A=tall(A);
     C=convn(A,B,'same');
     C(C>Bmax)=Bmax;
     [rr,cc]=size(pts_xyz);
