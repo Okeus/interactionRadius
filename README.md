@@ -5,7 +5,7 @@ The scripts are to be run on an HPC cluster computer. There are steps taken to i
 
 gaussianOverlap3D_v9c_batch.sh : Bash script for submitting single job from the job array. Allows the the number of cpus and amount of memory for each job to be pre-allocated.  Otherwise, the job will  probably fail due to memory errors.
 
-gaussianOverlap3D_v9c_batch.m : Main matlab script.  This simulates the interaction radii matrices. Adjust matric size with increasing or decreasing 'sfact' variable.  sfact=1 is 256x256x256 matrix.  sfact=4 is 1024x102x1024 matrix, etc. Randomly places spheres in the matrix with a convolution kernel, then summates the matrices.  
+gaussianOverlap3D_v9c_batch.m : Main matlab script.  This simulates the interaction radii matrices. Adjust matrix size with increasing or decreasing 'sfact' variable.  sfact=1 is 256x256x256 matrix.  sfact=4 is 1024x102x1024 matrix, etc. Randomly places spheres in the matrix with a convolution kernel, then summates the matrices.  
 
 %Load Matlab module
 1. module load matlab
