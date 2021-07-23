@@ -2,7 +2,7 @@ close all
 %instr='sub';
 %instr='add';
 instr='thr';
-sfact=1;
+sfact=4;
 ci=0;  %This has no droplets or white pixels.
 cf=0.002;  %This is maximum concentration
 dc=cf/10;
@@ -44,7 +44,9 @@ for zz=2:1:9
 			%astr=strcat('batch_sub_',astr1);
 			astr=strcat(astr,'_');
 			astr=strcat(astr,astr2);
-			astr=strcat(astr,'_1.mat');
+            astr=strcat(astr,'_');
+			astr=strcat(astr,num2str(sfact));
+            astr=strcat(astr,'.mat');
        			disp(astr);
 			vv=load(astr);
 			arr(zcnt,ycnt)=vv.summ;
@@ -70,7 +72,7 @@ for rr=2:1:9
 	x=[0 x];
 	y=arr(ucnt,:);
 	y=[0 y];
-	bstr=strcat(num2str(rr),' um')
+	bstr=strcat(num2str(rr*2.5),' um')
 	%plot(100*x,y/max(arr(:)),'DisplayName',bstr)
 	plot(100*x,y/(255*sfact*256*sfact*256*sfact*256),'DisplayName',bstr,'LineWidth',1)
 	ucnt=ucnt+1;
@@ -137,7 +139,7 @@ ylim([0 1.05])
 
 %saveas(gcf,'gaussianOverlap3D_v6_sub_batch_plot_std1.jpg')
 if instr=='thr'
-	saveas(gcf,'gaussianOverlap3D_v9c_thr_batch_plot_std1_sfact1.jpg')
+	saveas(gcf,'gaussianOverlap3D_v9c_thr_batch_plot_std1_sfact4.jpg')
 end
 if instr=='sub'
 	saveas(gcf,'gaussianOverlap3D_v7_sub_batch_plot_std1.jpg')

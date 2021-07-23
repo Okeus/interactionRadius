@@ -3,7 +3,7 @@
 #SBATCH --cpus-per-task 8
 #SBATCH --partition shared-cpu
 #SBATCH --time 600:00
-#SBATCH --mem-per-cpu=4000
+#SBATCH --mem-per-cpu=5000
 
 module load foss/2020a matlab/2019b CUDA
 
