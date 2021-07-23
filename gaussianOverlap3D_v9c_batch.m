@@ -6,7 +6,7 @@
 
 %function gaussianOverlap3D_v9c_batch(arr_idx)
 function gaussianOverlap3D_v9c_batch()
-    %parpool(4)
+    %parpool(8)
     %opts=parforOptions(parcluster('local'));
 	%gpuDevice
     %istr='sub'
