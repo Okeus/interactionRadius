@@ -2,7 +2,7 @@
 
 This code provides the simulation software for the following article:
 
-Ryan Holman, Laura Gui, Orane Lorton, Pauline Guillemin, Stéphane Desgranges, Christiane Contino-Pépin & Rares Salomir (2022) PFOB sonosensitive microdroplets: determining their interaction radii with focused ultrasound using MR thermometry and a Gaussian convolution kernel computation, International Journal of Hyperthermia, 39:1, 108-119, DOI: 10.1080/02656736.2021.2021304
+**Ryan Holman, Laura Gui, Orane Lorton, Pauline Guillemin, Stéphane Desgranges, Christiane Contino-Pépin & Rares Salomir (2022) PFOB sonosensitive microdroplets: determining their interaction radii with focused ultrasound using MR thermometry and a Gaussian convolution kernel computation, International Journal of Hyperthermia, 39:1, 108-119, DOI: 10.1080/02656736.2021.2021304**
 
 This is code for simulating the interaction radius from randomly dispersed microdroplets in a liquid medium.  It predicts the interaction radius, this represents 90% volume for the probability density function of increased temperature surrounding a single particle. 
 
