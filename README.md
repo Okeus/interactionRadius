@@ -1,7 +1,12 @@
 # interactionRadius
+
+This code provides the simulation software for the following article:
+
+Ryan Holman, Laura Gui, Orane Lorton, Pauline Guillemin, Stéphane Desgranges, Christiane Contino-Pépin & Rares Salomir (2022) PFOB sonosensitive microdroplets: determining their interaction radii with focused ultrasound using MR thermometry and a Gaussian convolution kernel computation, International Journal of Hyperthermia, 39:1, 108-119, DOI: 10.1080/02656736.2021.2021304
+
 This is code for simulating the interaction radius from randomly dispersed microdroplets in a liquid medium.  It predicts the interaction radius, this represents 90% volume for the probability density function of increased temperature surrounding a single particle. 
 
-The scripts are to be run on an HPC cluster computer. There are steps taken to implement the script on the cluster. Some of the jobs tended to fail, without much description in the job report.  I completed as many jobs as possible, then resubmitted any failed jobs by adjusting the job array indices.  
+The scripts are to be run on an HPC cluster computer.
 
 gaussianOverlap3D_v9c_batch.sh : Bash script for submitting single job from the job array. Allows the the number of cpus and amount of memory for each job to be pre-allocated.  Otherwise, the job will  probably fail due to memory errors.
 
